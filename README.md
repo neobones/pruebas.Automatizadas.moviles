@@ -32,6 +32,27 @@ appium-test-project/
 └── README.md
 ```
 
+## Explicación de la estructura:
+
+- config/: Contiene archivos de configuración separados para iOS y Android.
+- ios_config.py: Configuraciones específicas para iOS.
+- android_config.py: Configuraciones específicas para Android.
+- tests/: Contiene todos tus casos de prueba.
+- ios/: Pruebas específicas para iOS.
+- android/: Pruebas específicas para Android.
+- common/: Pruebas que se pueden ejecutar en ambas plataformas.
+- pages/: Implementa el patrón Page Object Model.
+- ios/ y android/: Contienen clases que representan pantallas específicas de cada plataforma.
+- base_page.py: Clase base con métodos comunes para todas las páginas.
+- utils/: Funciones y clases de utilidad.
+- custom_wait.py: Funciones personalizadas de espera.
+- test_data.py: Datos de prueba compartidos.
+- reports/: Carpeta para almacenar los informes generados por las pruebas.
+- apps/: Almacena los archivos IPA y APK de tu aplicación.
+- requirements.txt: Lista todas las dependencias de Python necesarias.
+- conftest.py: Configuraciones y fixtures de pytest.
+- README.md: Documentación del proyecto.
+
 ## Requisitos Previos
 
 - Python 3.7+
