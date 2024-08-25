@@ -1,0 +1,9 @@
+userName: "tu_username"
+accessKey: "tu_access_key"
+platforms:
+  - deviceName: "Samsung Galaxy S22"
+    platformName: "android"
+    platformVersion: "12.0"
+  - deviceName: "iPhone 13"
+    platformName: "ios"
+    platformVersion: "15"

@@ -10,11 +10,13 @@ appium-test-project/
 ├── config/
 │   ├── ios_config.py
 │   └── android_config.py
+│   └── browserstack_config.py
 │
 ├── tests/
 │   ├── ios/
 │   ├── android/
 │   └── common/
+│   └── browserstack/
 │
 ├── pages/
 │   ├── ios/
@@ -24,11 +26,13 @@ appium-test-project/
 ├── utils/
 │   ├── custom_wait.py
 │   └── test_data.py
+│   └── driver_factory.py
 │
 ├── reports/
 ├── apps/
 ├── requirements.txt
 ├── conftest.py
+├── browserstack.yml
 └── README.md
 ```
 
@@ -60,6 +64,7 @@ appium-test-project/
 - Appium Server
 - Xcode (para pruebas en iOS)
 - Android Studio y SDK (para pruebas en Android)
+- Cuenta en BrowserStack (para pruebas en la nube)
 
 ## Configuración del Entorno
 
@@ -77,6 +82,35 @@ appium-test-project/
    - ANDROID_HOME: ruta al SDK de Android
    - JAVA_HOME: ruta a tu instalación de Java
 
+## Configuración de BrowserStack
+
+1. Crea una cuenta en [BrowserStack](https://www.browserstack.com/automate) si aún no tienes una.
+
+2. Instala la biblioteca de BrowserStack:
+   ```
+   pip install browserstack-sdk
+   ```
+
+3. Crea un archivo `browserstack.yml` en la raíz del proyecto con tus credenciales:
+   ```yaml
+   userName: "tu_username"
+   accessKey: "tu_access_key"
+   platforms:
+     - deviceName: "Samsung Galaxy S22"
+       platformName: "android"
+       platformVersion: "12.0"
+     - deviceName: "iPhone 13"
+       platformName: "ios"
+       platformVersion: "15"
+   ```
+
+4. Sube tu aplicación a BrowserStack:
+   ```
+   curl -u "tu_username:tu_access_key" \
+        -X POST "https://api-cloud.browserstack.com/app-automate/upload" \
+        -F "file=@/path/to/your/app.apk"
+   ```
+
 ## Configuración de las Pruebas
 
 1. Coloca tus archivos .ipa (iOS) y .apk (Android) en la carpeta `apps/`.
@@ -84,9 +118,14 @@ appium-test-project/
 
 ## Ejecución de las Pruebas
 
-Para ejecutar todas las pruebas:
+Para ejecutar todas las pruebas localmente:
 ```
 pytest
+```
+
+Para pruebas en BrowserStack
+```
+pytest --use-browserstack
 ```
 
 Para ejecutar pruebas específicas de iOS:
@@ -97,6 +136,11 @@ pytest tests/ios
 Para ejecutar pruebas específicas de Android:
 ```
 pytest tests/android
+```
+
+Para ejecutar pruebas en BrowserStack:
+```
+browserstack-sdk python -m pytest tests/browserstack
 ```
 
 ## Configurar herramientas específicas de la plataforma
@@ -125,6 +169,11 @@ Para Android:
 Copyappium driver install uiautomator2
 ```
 
+## Configuración de las Pruebas
+
+1. Coloca tus archivos .ipa (iOS) y .apk (Android) en la carpeta `apps/`.
+2. Actualiza las rutas y capacidades deseadas en `config/ios_config.py`, `config/android_config.py`, y `config/browserstack_config.py`.
+
 ## Generación de Reportes
 
 Los reportes se generarán automáticamente en la carpeta `reports/` después de cada ejecución de pruebas.
@@ -148,3 +197,4 @@ Enlace del proyecto: [https://github.com/neobones/pruebas.Automatizadas.moviles]
 - [Appium](https://appium.io/)
 - [Selenium](https://www.selenium.dev/)
 - [pytest](https://docs.pytest.org/)
+- [BrowserStack](https://www.browserstack.com/)
