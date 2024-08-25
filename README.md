@@ -1,4 +1,4 @@
-# Proyecto de Pruebas Automatizadas con Appium
+# Pruebas Automatizadas Móviles
 
 Este proyecto contiene pruebas automatizadas para aplicaciones móviles iOS y Android utilizando Appium.
 
@@ -97,6 +97,32 @@ pytest tests/ios
 Para ejecutar pruebas específicas de Android:
 ```
 pytest tests/android
+```
+
+## Configurar herramientas específicas de la plataforma
+1. Para iOS:
+   Instala Xcode desde la App Store
+
+   Instala el comando xcrun ejecutando en la terminal:
+   ```
+   Copyxcode-select --install
+   ```
+2. Para Android:
+   Descarga e instala Android Studio
+   Configura las variables de entorno:
+
+   ANDROID_HOME: ruta al SDK de Android
+   JAVA_HOME: ruta a tu instalación de Java
+   Añade $ANDROID_HOME/tools, $ANDROID_HOME/tools/bin, y $ANDROID_HOME/platform-tools a tu PATH
+
+## Instalar drivers específicos de Appium
+Para iOS:
+```
+Copyappium driver install xcuitest
+```
+Para Android:
+```
+Copyappium driver install uiautomator2
 ```
 
 ## Generación de Reportes

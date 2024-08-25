@@ -1,0 +1,32 @@
+{
+  "name": "pruebas.automatizadas.moviles",
+  "version": "1.0.0",
+  "description": "Este proyecto contiene pruebas automatizadas para aplicaciones móviles iOS y Android utilizando Appium.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neobones/pruebas.Automatizadas.moviles.git"
+  },
+  "keywords": [
+    "iOS",
+    "Android",
+    "Test"
+  ],
+  "author": "Juan Pablo Melinao González",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neobones/pruebas.Automatizadas.moviles/issues"
+  },
+  "homepage": "https://github.com/neobones/pruebas.Automatizadas.moviles#readme",
+  "dependencies": {
+    "appium": "^1.22.3",
+    "appium-doctor": "^1.16.2",
+    "mjpeg-consumer": "^2.0.0"
+  }
+}
