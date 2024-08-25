@@ -5,7 +5,7 @@ Este proyecto contiene pruebas automatizadas para aplicaciones móviles iOS y An
 ## Estructura del Proyecto
 
 ```
-appium-test-project/
+pruebas.Automatizadas.moviles/
 │
 ├── features/
 │   ├── steps/
