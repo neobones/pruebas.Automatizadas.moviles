@@ -1,4 +1,4 @@
-# Pruebas Automatizadas Móviles
+# Pruebas Automatizadas Móviles con Appium y Behave (Cucumber para Python)
 
 Este proyecto contiene pruebas automatizadas para aplicaciones móviles iOS y Android utilizando Appium.
 
@@ -7,6 +7,12 @@ Este proyecto contiene pruebas automatizadas para aplicaciones móviles iOS y An
 ```
 appium-test-project/
 │
+├── features/
+│   ├── steps/
+│   │   └── login_steps.py
+│   ├── environment.py
+│   └── login.feature
+|
 ├── config/
 │   ├── ios_config.py
 │   └── android_config.py
@@ -33,6 +39,7 @@ appium-test-project/
 ├── requirements.txt
 ├── conftest.py
 ├── browserstack.yml
+├── behave.ini
 └── README.md
 ```
 
@@ -143,6 +150,23 @@ Para ejecutar pruebas en BrowserStack:
 browserstack-sdk python -m pytest tests/browserstack
 ```
 
+## Ejecución de las Pruebas con Behave (Cucumber para Python)
+
+Para ejecutar todas las pruebas localmente:
+```
+behave
+```
+
+Para ejecutar pruebas en BrowserStack:
+```
+behave -D browserstack=true
+```
+
+Para ejecutar un escenario específico:
+```
+behave features/login.feature
+```
+
 ## Configurar herramientas específicas de la plataforma
 1. Para iOS:
    Instala Xcode desde la App Store
@@ -198,3 +222,4 @@ Enlace del proyecto: [https://github.com/neobones/pruebas.Automatizadas.moviles]
 - [Selenium](https://www.selenium.dev/)
 - [pytest](https://docs.pytest.org/)
 - [BrowserStack](https://www.browserstack.com/)
+- [Behave](https://behave.readthedocs.io/)
